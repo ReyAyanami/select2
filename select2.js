@@ -3652,6 +3652,12 @@ the specific language governing permissions and limitations under the Apache Lic
           }
         },
         matcher: function(term, text) {
+            if (term == undefined) {
+                term = '';
+            }
+            if (text == undefined) {
+                text = '';
+            }
             return stripDiacritics(''+text).toUpperCase().indexOf(stripDiacritics(''+term).toUpperCase()) >= 0;
         },
         separator: ",",
